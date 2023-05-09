@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { PlayIcon} from '@heroicons/react/24/outline';
 import YouTube from 'react-youtube'
-import Episodes from "./Episodes";
+import DetailSeasons from "./DetailSeasons";
 
 
 
@@ -30,7 +30,7 @@ export default function VideoView() {
                 .then(answer => {
                     setListTv(answer.results)
                     setIsLoadinglistTv(false)
-                    setIndex( Math.round(Math.random()*19) )
+                    // setIndex( Math.round(Math.random()*19) )
                 })
 
         }, [])
@@ -99,7 +99,7 @@ export default function VideoView() {
             {/* <div className="border-4 border-orange-500 h-[400px] p-10 flex">
                 <p>video</p>
             </div> */}
-            <Episodes id={listTv[index].id}/>
+            <DetailSeasons id={listTv[index].id}/>
         </div>
 
 
